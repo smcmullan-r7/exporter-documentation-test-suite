@@ -28,9 +28,21 @@
 {[/]}
 {[ let staticPropertiesToHighlight = (propertiesToHighlight.count() - linkPropertiesToHighlight) /]}
 
-    
+{* Get health tag *}
+{[ let healthTag = convertHealthTagIfAny(component) /]}
+{* {[ let healthTagReadable = healthTag.name /]} *}
+{[ let healthTagSlug = "status-"+healthTag.slug /]}
+{[ let healthTagContrastColor = contrastColor(healthTag.backgroundColor) /]}
+
+
+        
 {* Generate inline component health *}
 <div class="component-status">
+{[ if (component && component.updatedAt) ]}
+
+
+
+{[/]}
   <p class="component-status__title">STATUS</p>
   {* Generate properties that are of non-link type properties *}
   {[ if (staticPropertiesToHighlight > 0) ]}
@@ -85,14 +97,48 @@
     {[/]}
   </div>
   {[/]}
-  {[/]}
-  {[/]}
-
+{[ if (linkPropertiesToHighlight > 0) ]}
+<div class="component-status__links">
+    {[ for property in component.properties ]}
+        {[ if (propertiesToHighlight.contains(property.persistentId) && ["URL", "Link"].contains(property.propertyType)) ]}
+            {* Limiting only to URL now, since the Link doesn't have data in the payload yet *}
+            {[ if (["URL"].contains(property.propertyType) && propertyValues[property.codeName]) ]}
+                {* Generate link container, if needed *}
+                {[ switch property.propertyType ]}
+                    {[ case "URL" ]}
+                        <a href="{{ propertyValues[property.codeName] ? propertyValues[property.codeName] : "#" }}">
+                    {[ case "Link" ]}
+                        <a href="#TODO">
+                {[/]}
+                {* Generate content for each property *}
+                <div class="component-status__col">
+                    {* Property name *}
+                    <div class="component-status__logos">{{ property.name }}</div>
+                    {* Property value *}
+                    <div class="component-status__right-text">
+                    {[ switch property.propertyType ]}
+                        {[ case "Link" ]}
+                        <img class="link-chevron" />
+                        {[ case "URL" ]}
+                        <img class="link-chevron" />
+                    {[/]}
+                    </div>
+                </div>
+                </a>
+            {[/]}
+        {[/]}
+    {[/]}
+    </div>
+    {[/]}
   
             </div>
-     
-   
-
+        
+    {[ else ]}
+    <p>Unable to show component health - unknown component</p>
+    {[/]}
+{[ else ]}
+<p>Unable to show component health - please specify component first</p>
+{[/]}
         
 
         
