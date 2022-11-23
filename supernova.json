@@ -1,0 +1,13 @@
+{
+  "workspaceId": "8952",
+  "designSystemId": "19245",
+  "designSystemVersionId": "19690",
+  "brandId": "19217",
+  "exporterId": "233",
+  "workspaceName": "Rapid7 X",
+  "designSystemName": "R7 Test Design Sytem",
+  "designSystemVersionName": "Shared draft",
+  "exporterName": "Sean's Test Suite",
+  "write_to": ".build",
+  "description": "Note to our fellow developers: Install Supernova integration from the VSCode marketplace and then our  Sean's Test Suite exporter will synchronize design data and generate appropriate code from the  Shared draft design system every time you request it through the extension interface, fully automatically."
+}
