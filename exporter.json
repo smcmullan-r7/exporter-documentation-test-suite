@@ -1,12 +1,12 @@
 {
   "id": "io.supernova.documentation-main",
-  "name": "Default Documentation",
-  "description": "Default customizable exporter for design system documentation", 
-  "author": "Supernova",
-  "organization": "Supernova",
+  "name": "Sean's Test Suite",
+  "description": "Sean's Test Suite for breaking stuff",
+  "author": "PXE",
+  "organization": "Rapid7",
   "source_dir": "src",
   "assets_dir": "assets",
-  "version": "4.1.2",
+  "version": "4.0.1",
   "usesBrands": false,
   "config": {
     "sources": "sources.json",
@@ -266,14 +266,6 @@
         "description": "When enabled, all first-level groups will be expanded, and the group label will be styled as an eyebrow heading. This won't be applied to pages with tabs.",
         "category": "Side navigation",
         "default": false
-      },
-      {
-        "key": "navigationShowTabs",
-        "type": "boolean",
-        "label": "Show page tabs in navigation",
-        "description": "When enabled, page tabs will be displayed in the side navigation.",
-        "category": "Side navigation",
-        "default": true
       },
       {
         "key": "showSupernovaBranding",
@@ -588,6 +580,27 @@
         ]
       },
       {
+        "key": "io.supernova.documentation-main.component-status",
+        "category": "Components",
+        "title": "Component Status (R7)",
+        "description": "Show component status across Figma, Storybook and Supernova",
+        "icon": "icons/custom-block-health.png",
+        "mode": "block",
+        "properties": [
+          {
+            "key": "componentId",
+            "type": "component",
+            "label": "Component"
+          },
+          {
+            "key": "propertiesToHighlight",
+            "type": "componentProperties",
+            "label": "Properties"
+          }
+         
+        ]
+      }, 
+      {
         "key": "io.supernova.documentation-main.component-health",
         "category": "Components",
         "title": "Component Health",
@@ -722,7 +735,12 @@
         {
           "name": "Accordion",
           "key": "accordion"
+        },
+        {
+          "name": "Dos & Don'ts",
+          "key": "dos-donts"
         }
+        
       ],
       "TokenList": [
         {
@@ -747,7 +765,7 @@
           "key": "grid-1"
         },
         {
-          "name": "Color stack",
+          "name": "Stack",
           "key": "stack"
         }
       ],
@@ -778,7 +796,7 @@
           "key": "stack"
         },
         {
-          "name": "Color stack (2 columns)",
+          "name": "Stack (2 columns)",
           "key": "stack-2"
         }
       ],
@@ -805,7 +823,7 @@
           "key": "grid-1"
         },
         {
-          "name": "Color stack",
+          "name": "Stack",
           "key": "stack"
         }
       ],
