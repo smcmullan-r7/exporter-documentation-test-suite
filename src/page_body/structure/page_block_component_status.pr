@@ -28,14 +28,7 @@
 {[/]}
 {[ let staticPropertiesToHighlight = (propertiesToHighlight.count() - linkPropertiesToHighlight) /]}
 
-{* Get health tag *}
-{[ let healthTag = convertHealthTagIfAny(component) /]}
-{* {[ let healthTagReadable = healthTag.name /]} *}
-{[ let healthTagSlug = "status-"+healthTag.slug /]}
-{[ let healthTagContrastColor = contrastColor(healthTag.backgroundColor) /]}
-
-
-{*         
+    
 {* Generate inline component health *}
 <div class="component-status">
   <p class="component-status__title">STATUS</p>
@@ -97,7 +90,7 @@
 
   
             </div>
-        </div>
+     
    
 
         
