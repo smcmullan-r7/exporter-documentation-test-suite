@@ -85,7 +85,9 @@
               </section>
               {[ inject "page_body_structure_content" context page /]}
             </div>
-
+            <div> THIS IS A TEST
+              <a class="test-link" href="https://issues.corp.rapid7.com/secure/RapidBoard.jspa?rapidView=2124&projectKey=PXE&selectedIssue=PXE-1372"</a>
+            </div>
             {* Generate footer, if enabled *}
             {[ inject "page_body_structure_footer" context page /]}
           </div>
